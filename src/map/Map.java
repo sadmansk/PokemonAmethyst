@@ -14,8 +14,22 @@ public class Map
 		for (int row = 0 ; row < rows ; row++)
 			for (int col = 0 ; col <columns ; col++)
 			{
-				map [row] [col] = new Block (row + 1, col +1); // blank space
+				map [row] [col] = new Block (col + 1, row +1); // blank space
 			}
+	}
+	
+	public String toString ()
+	{
+		String str = "";
+		for (int row = 0 ; row < map.length ; row++)
+		{
+			for (int col = 0 ; col < map[0].length ; col++)
+			{
+				str += map[row][col] + " ";
+			}
+			str += "\n";
+		}
+		return str;
 	}
 }
 
@@ -24,12 +38,14 @@ class Block
 	private int [] block = new int [2]; //stores the coordinates of a block on the map as x and y coordinates
 	private char prop;
 	private Image image;
+	private boolean passable;
 	
 	public Block (int x, int y)
 	{
 		block [0] = x;
 		block [1] = y;
 		prop = ' ';
+		passable = true;
 	}
 	
 	public Block (int x, int y, char prop)
