@@ -5,6 +5,7 @@ import java.awt.Image;
 public class Map
 {
 	private Block [][] map;
+	public static int blockW = 10, blockH = 10;
 	
 	//creates an empty map
 	public Map (int rows, int columns)
@@ -30,43 +31,5 @@ public class Map
 			str += "\n";
 		}
 		return str;
-	}
-}
-
-class Block
-{
-	private int [] block = new int [2]; //stores the coordinates of a block on the map as x and y coordinates
-	private char prop;
-	private Image image;
-	private boolean passable;
-	
-	public Block (int x, int y)
-	{
-		block [0] = x;
-		block [1] = y;
-		prop = ' ';
-		passable = true;
-	}
-	
-	public Block (int x, int y, char prop)
-	{
-		block [0] = x;
-		block [1] = y;
-		this.prop = prop;
-	}
-	
-	public String toString ()
-	{
-		return "(" + block [0] + ", " + block [1] + ")";
-	}
-	
-	public char getProp ()
-	{
-		return prop;
-	}
-	
-	public void setProp (char prop)
-	{
-		this.prop = prop;
 	}
 }
