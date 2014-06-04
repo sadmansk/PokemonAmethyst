@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Map
 {
 	public Block [][] map;
-	public static int blockW = 10, blockH = 10;
+	public static int blockW = 30, blockH = 30;
 	public final static String curPath = Map.class.getClassLoader().getResource("").getPath().substring(1).replace("%20", " " ) + "map\\";
 	//creates an empty map
 	public Map (int rows, int columns)
@@ -106,6 +106,10 @@ public class Map
 					g.setColor (Color.green);
 				else if (map[row][col].getProp() == 'H') //house/structure
 					g.setColor (Color.blue);
+				else if (map[row][col].getProp() == 'C') //character
+						g.setColor (Color.pink);
+				else if (map[row][col].getProp() == 'P') //player
+					g.setColor (Color.yellow);
 				g.fillRect (col * blockW, row * blockH, blockW, blockH); // draw block
 			}
 	}

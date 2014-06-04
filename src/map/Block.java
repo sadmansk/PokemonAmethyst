@@ -14,7 +14,7 @@ public class Block
 	{
 		xPos = x;
 		yPos = y;
-		prop = ' ';
+		prop = ' '; //adds empty spaces as default
 		passable = true;
 	}
 
@@ -31,9 +31,11 @@ public class Block
 		case 'L': //ledge
 			passable = false;
 			break;
-
+			
+		case 'P': //the player
 		case ' ': //empty space
 		case 'G': //grass
+		case 'D': //door
 		default: //for everything else
 			passable = true;
 			break;
