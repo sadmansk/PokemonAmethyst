@@ -19,7 +19,8 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class InputHandler implements KeyListener {
+public class InputHandler implements KeyListener 
+{
 	public Map<Key, Integer> mappings = new HashMap<Key, Integer>();
 	private ExecutorService threadPool = Executors.newCachedThreadPool();
 
@@ -31,7 +32,8 @@ public class InputHandler implements KeyListener {
 	 * @param Keys
 	 * An object that holds key input properties. All properties are used throughout the life cycle of this application.
 	 * */
-	public InputHandler(Keys keys) {
+	public InputHandler(Keys keys)
+	{
 		mappings.put(keys.up, KeyEvent.VK_UP);
 		mappings.put(keys.down, KeyEvent.VK_DOWN);
 		mappings.put(keys.left, KeyEvent.VK_LEFT);
@@ -50,25 +52,34 @@ public class InputHandler implements KeyListener {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent event) {
+	public void keyPressed(KeyEvent event)
+	{
 		int code = event.getKeyCode();
-		for (Key v : mappings.keySet()) {
-			if (mappings.get(v) == code) {
-				if (!v.keyStateDown) {
+		for (Key v : mappings.keySet())
+		{
+			if (mappings.get(v) == code)
+			{
+				if (!v.keyStateDown)
+				{
 					final Key key = v;
 					key.lastKeyState = key.keyStateDown;
 					key.isTappedDown = true;
 					key.isPressedDown = false;
 					key.keyStateDown = true;
-					this.threadPool.execute(new Runnable() {
+					this.threadPool.execute(new Runnable()
+					{
 						@Override
-						public void run() {
-							try {
+						public void run()
+						{
+							try
+							{
 								Thread.sleep(100);
 							}
-							catch (InterruptedException e) {
+							catch (InterruptedException e)
+							{
 							}
-							if (key.keyStateDown) {
+							if (key.keyStateDown)
+							{
 								key.isPressedDown = true;
 								key.isTappedDown = false;
 							}
@@ -83,9 +94,12 @@ public class InputHandler implements KeyListener {
 	}
 
 	@Override
-	public void keyReleased(KeyEvent event) {
-		for (Key k : mappings.keySet()) {
-			if (mappings.get(k) == event.getKeyCode()) {
+	public void keyReleased(KeyEvent event)
+	{
+		for (Key k : mappings.keySet())
+		{
+			if (mappings.get(k) == event.getKeyCode())
+			{
 				k.lastKeyState = k.keyStateDown;
 				k.isPressedDown = false;
 				k.isTappedDown = false;
@@ -96,7 +110,8 @@ public class InputHandler implements KeyListener {
 	}
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent arg0)
+	{
 		// Ignore. Used for sending Unicode character mapped as a system input.
 	}
 }

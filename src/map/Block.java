@@ -5,38 +5,60 @@ import java.awt.Image;
 
 public class Block
 {
-	protected int [] block = new int [2]; //stores the coordinates of a block on the map as x and y coordinates
+	protected int xPos, yPos; //stores the coordinates of a block on the map as x and y coordinates
 	protected char prop;
 	protected Image image;
 	protected boolean passable;
-	
+
 	public Block (int x, int y)
 	{
-		block [0] = x;
-		block [1] = y;
+		xPos = x;
+		yPos = y;
 		prop = ' ';
 		passable = true;
 	}
-	
+
 	public Block (int x, int y, char prop)
 	{
-		block [0] = x;
-		block [1] = y;
+		xPos = x;
+		yPos = y;
 		this.prop = prop;
+		switch (prop)
+		{
+		case 'T': //trees
+		case 'H': //structures
+		case 'C': //characters
+		case 'L': //ledge
+			passable = false;
+			break;
+
+		case ' ': //empty space
+		case 'G': //grass
+		default: //for everything else
+			passable = true;
+			break;
+		}
 	}
-	
+
 	public String toString ()
 	{
-		return "(" + block [0] + ", " + block [1] + ")";
+		return "(" + xPos + ", " + yPos + ")";
 	}
-	
+
 	public char getProp ()
 	{
 		return prop;
 	}
-	
+
 	public void setProp (char prop)
 	{
 		this.prop = prop;
 	}
+
+	public boolean getPass ()
+	{
+		return passable;
+	}
+
+
 }

@@ -1,6 +1,7 @@
 package characters;
 
 import java.awt.Image;
+import map.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,13 +14,17 @@ public class Character extends Block
 	protected String name;
 	protected int facing;
 	protected Image back, faceRight, faceLeft;
+	protected static final int UP = 2, DOWN = 0, LEFT = 1, RIGHT = 3;
+	protected Map localMap;
 	
-	public Character (int x, int y, String name)
+	public Character (int x, int y, String name, Map map)
 	{
 		super (x, y);
 		passable = false;
 		this.name = name;
-		try
+		localMap = map;
+		/*try
+		
 		{
 			//all the different facings are stored in the image variables of the object
 			image = ImageIO.read (new File ("images\\characters\\" + name.toLowerCase() + ".gif")); // load file into Image object
@@ -29,6 +34,8 @@ public class Character extends Block
 		} catch (IOException e)
 		{
 			System.out.println ("Image could not be loaded");
-		} 
+		}*/  
 	}
+	
+	
 }
