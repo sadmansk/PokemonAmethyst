@@ -12,6 +12,7 @@ import map.*;
 public class Test extends JFrame
 {
 	Map town;
+	Structure house1, home, house2, house3;
 
 	//main method demonstrates an example of a Map
 	public static void main (String [] args)
@@ -40,6 +41,13 @@ public class Test extends JFrame
 		//add a character (player) to the map
 		Player test = new Player (28, 18, "Test", town);
 		Character japhet = new Character (27, 18, "Japhet", town);
+		
+		//add a few test Structures to the map
+		house1 = new Structure (4, 5, "house");
+		home = new Structure (24, 5, "house");
+		house2 = new Structure (4, 13, "house");
+		house3 = new Structure (24, 13, "house");
+		
 		//creates a new draw area for the map
 		DrawArea showMap = new DrawArea(town.getWidth(), town.getHeight());
 		content.add(showMap); //adds the draw area to the content pane
@@ -71,6 +79,10 @@ public class Test extends JFrame
 		public void paint(Graphics g)
 		{
 			town.show (g);
+			house1.show (g);
+			home.show (g);
+			house2.show (g);
+			house3.show (g);
 		}
 	}
 }
