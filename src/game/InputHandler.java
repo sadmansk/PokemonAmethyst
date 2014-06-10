@@ -34,21 +34,21 @@ public class InputHandler implements KeyListener
 	 * */
 	public InputHandler(Keys keys)
 	{
-		mappings.put(keys.up, KeyEvent.VK_UP);
-		mappings.put(keys.down, KeyEvent.VK_DOWN);
-		mappings.put(keys.left, KeyEvent.VK_LEFT);
-		mappings.put(keys.right, KeyEvent.VK_RIGHT);
-		mappings.put(keys.Z, KeyEvent.VK_Z);
-		mappings.put(keys.X, KeyEvent.VK_X);
-
-		mappings.put(keys.W, KeyEvent.VK_W);
-		mappings.put(keys.S, KeyEvent.VK_S);
-		mappings.put(keys.A, KeyEvent.VK_A);
-		mappings.put(keys.D, KeyEvent.VK_D);
-		mappings.put(keys.SLASH, KeyEvent.VK_SLASH);
-		mappings.put(keys.PERIOD, KeyEvent.VK_PERIOD);
-
-		mappings.put(keys.START, KeyEvent.VK_ENTER);
+//		mappings.put(keys.up, KeyEvent.VK_UP);
+//		mappings.put(keys.down, KeyEvent.VK_DOWN);
+//		mappings.put(keys.left, KeyEvent.VK_LEFT);
+//		mappings.put(keys.right, KeyEvent.VK_RIGHT);
+//		mappings.put(keys.Z, KeyEvent.VK_Z);
+//		mappings.put(keys.X, KeyEvent.VK_X);
+//
+//		mappings.put(keys.W, KeyEvent.VK_W);
+//		mappings.put(keys.S, KeyEvent.VK_S);
+//		mappings.put(keys.A, KeyEvent.VK_A);
+//		mappings.put(keys.D, KeyEvent.VK_D);
+//		mappings.put(keys.SLASH, KeyEvent.VK_SLASH);
+//		mappings.put(keys.PERIOD, KeyEvent.VK_PERIOD);
+//
+//		mappings.put(keys.START, KeyEvent.VK_ENTER);
 	}
 
 	@Override

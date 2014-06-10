@@ -1,10 +1,14 @@
 package map;
 
 import java.awt.Color;
+
+import javax.imageio.ImageIO;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 import game.Main;
@@ -95,22 +99,21 @@ public class Map
 	{
 		for (int row = 0 ; row < map.length; row++)
 			for (int col = 0 ; col < map[0].length; col++)
-			{					//simple rectangles
-				if (map [row] [col].getProp() == 'L') // ledge
-					g.setColor (Color.black);
-				else if (map [row] [col].getProp() == 'T') // tree
-					g.setColor (Color.gray);
-				else if (map [row] [col].getProp() == ' ') // space will erase what was there
-					g.setColor (Color.white);
-				else if (map[row][col].getProp() == 'G') //grass
-					g.setColor (Color.green);
-				else if (map[row][col].getProp() == 'H') //house/structure
-					g.setColor (Color.blue);
-				else if (map[row][col].getProp() == 'C') //character
-						g.setColor (Color.pink);
-				else if (map[row][col].getProp() == 'P') //player
-					g.setColor (Color.yellow);
-				g.fillRect (col * blockW, row * blockH, blockW, blockH); // draw block
+			{					
+				try
+				{
+					g.drawImage (ImageIO.read (new File (Map.curPath + "images\\_" + map[row][col].getProp() + "image.jpg")), col * blockW, row * blockH, null);
+				}
+				catch (IOException e)
+				{
+					try {
+						g.drawImage (ImageIO.read (new File (Map.curPath + "images\\_Himage.jpg")), col * blockW, row * blockH, null);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						System.out.println (Map.curPath + "images\\_" + map[row][col].getProp() + "image.jpg");
+					}
+				}
+				
 			}
 	}
 }

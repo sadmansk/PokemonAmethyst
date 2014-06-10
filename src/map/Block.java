@@ -29,13 +29,17 @@ public class Block
 		case 'H': //structures
 		case 'C': //characters
 		case 'L': //ledge
+		case 'l': //locked door
 			passable = false;
 			break;
 			
 		case 'P': //the player
 		case ' ': //empty space
 		case 'G': //grass
-		case 'D': //door
+		case 'D': //unlocked door
+		case 'd': //stairs down
+		case 'u': //stairs up
+		case 'F': //floor
 		default: //for everything else
 			passable = true;
 			break;

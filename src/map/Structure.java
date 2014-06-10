@@ -23,16 +23,16 @@ public class Structure
 		//tries loading the image from the file directory
 		try
 		{
-			image = ImageIO.read (new File (Map.curPath + "structures\\" + name.toLowerCase() + ".jpg"));
+			image = ImageIO.read (new File (Map.curPath + "images\\structures\\" + ID.toLowerCase() + ".jpg"));
 		}
 		catch (IOException e) //shows an error in case the file is not found
 		{
-			System.out.println ("File not found!" + Map.curPath + "structures\\" + name.toLowerCase() + ".jpg");
+			System.out.println ("File not found!" + Map.curPath + "images\\structures\\" + ID.toLowerCase() + ".jpg");
 		}
 		/**
 		 * Important: These are the required dimensions for each of the pictures:
 		 * house.jpg: 120 x 120
-		 * lab.jpg: 240 x 120
+		 * lab.jpg: 210 x 120
 		 * poke.jpg: 120 x 120
 		 * (All dimensions are in pixels)
 		 */
@@ -45,6 +45,12 @@ public class Structure
 		the program's language and the pixels are multiplied by
 		the static block dimensions of the map */
 		g.drawImage (image, (xPos - 1) * Map.blockW, (yPos - 1) * Map.blockH, null); //the image is shown using the graphics component
+	}
+	//adds a door to the structure
+	public void setDoor (int x, int y, char doorType, String end)
+	{
+		Door door = new Door ((xPos + x)*Map.blockW, (yPos + y)*Map.blockH, doorType, end);
+		
 	}
 	
 }

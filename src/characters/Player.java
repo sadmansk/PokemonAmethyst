@@ -9,33 +9,35 @@ public class Player extends Character
 	public Player(int x, int y, String name, Map map)
 	{
 		super(x, y, name, map);
-		map.map [y - 1][x - 1].setProp ('P'); //the character P on the map identifies the player
+		//localMap.map [y - 1][x - 1].setProp ('P'); //the character P on the map identifies the player
 	}
-	
+
 	//takes in an integer and moves the character
 	public void move (int m)
 	{
 		facing = m;
 		switch (m)
 		{
-		case 0:
-			if (localMap.map [yPos + 1][xPos].getPass()) //checks if the target block is passable
-				yPos++;
-			break;
-			
-		case 1:
-			if (localMap.map [yPos][xPos - 1].getPass()) //checks if the target block is passable
+		case 0://left
+			if (localMap.map [yPos - 1][xPos - 2].getPass()) //checks if the target block is passable
 				xPos--;
 			break;
 			
-		case 2:
-			if (localMap.map [yPos - 1][xPos].getPass()) //checks if the target block is passable
+		case 1://up
+			if (localMap.map [yPos - 2][xPos - 1].getPass()) //checks if the target block is passable
 				yPos--;
 			break;
-			
-		case 3:
-			if (localMap.map [yPos][xPos + 1].getPass()) //checks if the target block is passable
+
+		case 2://right
+			if (localMap.map [yPos - 1][xPos].getPass()) //checks if the target block is passable
 				xPos++;
+			break;
+			
+		case 3://down
+			if (localMap.map [yPos][xPos - 1].getPass()) //checks if the target block is passable
+				yPos++;
 		}
+		//localMap.map [yPos - 1][ xPos - 1].setProp ('P');
+
 	}
 }
