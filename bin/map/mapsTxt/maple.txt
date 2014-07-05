@@ -1,19 +1,19 @@
-TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+TTTTTTTTTTTTTTssTTTTTTTTTTTTTT
 T                            T
 T                            T
 T                            T
 T  HHHH                HHHH  T
 T  HHHH                HHHH  T
 T  HHHH                HHHH  T
-T  HlHH                HDHH  T
+T  HlHH                HhHH  T
 T          HHHHHHH           T
 T          HHHHHHH           T
 T          HHHHHHH           T
-T          HHHDHHH           T
+T          HHHoHHH           T
 T  HHHH                HHHH  T
 T  HHHH                HHHH  T
 T  HHHH                HHHH  T
-T  HlHH                HDHH  T
+T  HlHH                HHcH  T
 T                            T
 T                            T
 T                            T

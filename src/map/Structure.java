@@ -12,6 +12,7 @@ public class Structure
 	private Image image;
 	private int xPos, yPos;
 	private String ID;
+	public Door door;
 	
 	public Structure (int x, int y, String name)
 	{
@@ -45,12 +46,5 @@ public class Structure
 		the program's language and the pixels are multiplied by
 		the static block dimensions of the map */
 		g.drawImage (image, (xPos - 1) * Map.blockW, (yPos - 1) * Map.blockH, null); //the image is shown using the graphics component
-	}
-	//adds a door to the structure
-	public void setDoor (int x, int y, char doorType, String end)
-	{
-		Door door = new Door ((xPos + x)*Map.blockW, (yPos + y)*Map.blockH, doorType, end);
-		
-	}
-	
+	}	
 }
